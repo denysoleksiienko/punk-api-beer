@@ -1,0 +1,21 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.app-content {
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding-top: 55px;
+}
+.app-footer {
+  display: flex;
+  justify-content: space-around;
+}
