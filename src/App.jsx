@@ -1,6 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './redux';
+import { Beers } from './routes/Beers';
+
 import './App.scss';
 
 export const App = () => {
-  return <h1>App</h1>;
+  return (
+    <React.StrictMode>
+      <Provider store={store}>
+        <Beers />
+      </Provider>
+    </React.StrictMode>
+  );
 };
