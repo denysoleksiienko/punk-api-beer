@@ -11,7 +11,7 @@ export const reducer = handleActions(
   {
     [actions.setBeers]: (state, { payload }) => ({
       ...state,
-      products: payload,
+      allBeers: payload,
     }),
 
     [actions.setBeer]: (state, { payload }) => ({
