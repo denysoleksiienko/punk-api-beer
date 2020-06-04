@@ -7,7 +7,6 @@ export const Beers = ({ beers, initialBeerPage }) => {
   }, [initialBeerPage]);
   return (
     <div>
-      <h1>Beer</h1>
       {beers.map((item) => (
         <section key={item.id}>
           <div>{item.name}</div>
