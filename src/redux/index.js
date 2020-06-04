@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 import { reducer as beersReducer } from './beers/reducer';
 
 const reducers = combineReducers({
-  beers: beersReducer,
+  products: beersReducer,
 });
 
 export const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunkMiddleware)));

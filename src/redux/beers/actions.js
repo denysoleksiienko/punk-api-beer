@@ -1,7 +1,7 @@
 import { createAction } from 'redux-actions';
 import { HTTPservices } from '../../HTTPservices/HTTPservices';
 
-export const setBeers = createAction('SET_BOOKS');
+export const setBeers = createAction('SET_BEERS');
 export const setBeer = createAction('SET_BEER');
 export const setError = createAction('SET_ERROR');
 
