@@ -1,15 +1,22 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { Beers } from './Beers';
 
-import { ROOT, BEERS } from '../pathnames/pathnames';
-const routes = [{ path: BEERS, component: Beers, exact: false }];
+import { ROOT, LOGIN, BEERS } from '../constants/pathnames';
+import { Login } from './Login';
+
+const routes = [
+  { path: LOGIN, component: Login, exact: false },
+  { path: BEERS, component: Beers, exact: false },
+];
 
 export const Routes = () => {
   return (
     <Switch>
-      <Route path={ROOT} exact></Route>
+      <Route path={ROOT} exact>
+        <Redirect to={LOGIN} exact></Redirect>
+      </Route>
       {routes.map((props) => (
         <Route key={props.path} {...props} />
       ))}
