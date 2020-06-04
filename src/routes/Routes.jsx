@@ -4,11 +4,11 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { Beers } from './Beers';
 
 import { ROOT, LOGIN, BEERS } from '../constants/pathnames';
-import { Login } from './Login/Login';
+import { Login } from './Login';
 
 const routes = [
   { path: LOGIN, component: Login, exact: false },
-  { path: BEERS, component: Beers, exact: true },
+  { path: BEERS, component: Beers, exact: false },
 ];
 
 export const Routes = () => {

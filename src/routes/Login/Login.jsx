@@ -1,13 +1,17 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import { BEERS } from '../../constants/pathnames';
 import './Login.scss';
 
-export const Login = () => {
+export const Login = ({ login }) => {
+  const history = useHistory();
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -20,8 +24,9 @@ export const Login = () => {
         .min(6, 'Should be 6 chars minimum.')
         .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: () => {
+      login();
+      history.push(BEERS);
     },
   });
 
