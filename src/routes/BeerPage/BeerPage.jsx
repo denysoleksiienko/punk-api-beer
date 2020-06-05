@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
+import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
+
 import './BeerPage.scss';
 
 export const BeerPage = ({ currentBeer, initialBeerByID }) => {
@@ -16,11 +18,7 @@ export const BeerPage = ({ currentBeer, initialBeerByID }) => {
       {currentBeer.map((item) => (
         <section key={item.id} className="beer-container">
           <button onClick={() => history.goBack()} className="btn-back">
-            <img
-              className="btn-back-img"
-              src="https://image.flaticon.com/icons/png/512/2883/2883445.png"
-              alt="btn back"
-            />
+            <ArrowBackOutlinedIcon color="secondary" fontSize="large" />
           </button>
 
           <div className="beer-page">
