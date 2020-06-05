@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { BeerCard } from '../../components/BeerCard';
 
+import './Beers.scss';
+
 export const Beers = ({ beers, initialBeerPage }) => {
   useEffect(() => {
     initialBeerPage();
@@ -8,11 +10,13 @@ export const Beers = ({ beers, initialBeerPage }) => {
 
   return (
     <div className="main-content">
-      {beers.length ? (
-        beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)
-      ) : (
-        <div className="another-cont"> No beers </div>
-      )}
+      <div className="beers-gallery">
+        {beers.length ? (
+          beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)
+        ) : (
+          <div className="another-cont"> No beers </div>
+        )}
+      </div>
     </div>
   );
 };

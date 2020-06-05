@@ -1,0 +1,29 @@
+.main-content {
+  display: flex;
+  width: 100%;
+}
+
+.beers-gallery {
+  min-width: 70vh;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 30px;
+  max-width: 1024px;
+  grid-template-columns: repeat(1, 3fr);
+}
+
+.another-cont {
+  min-height: 50vh;
+  width:100%;
+}
+
+@media (min-width: 700px) {
+  .books-gallery {
+    grid-template-columns: repeat(2, 3fr);
+  }
+}
+@media (min-width: 1012px) {
+  .books-gallery {
+    grid-template-columns: repeat(3, 3fr);
+  }
+}
