@@ -16,9 +16,15 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 400,
     margin: '25px 25px',
+    position: 'relative',
+    paddingBottom: '50px',
   },
   media: {
     height: 200,
+  },
+  buttons: {
+    position: 'absolute',
+    bottom: 0,
   },
 });
 
@@ -45,7 +51,7 @@ export const BeerCard = ({ beer }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className={classes.buttons}>
         <Button size="small" color="primary">
           Share
         </Button>
