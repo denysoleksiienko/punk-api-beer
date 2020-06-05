@@ -6,6 +6,7 @@ import './BeerCard.scss';
 export const BeerCard = ({ beer }) => {
   const history = useHistory();
   const { url } = useRouteMatch();
+
   return (
     <section onClick={() => history.push(`${url}/${beer.id}`)} key={beer.id} className="beer-content">
       <div className="beer-card">

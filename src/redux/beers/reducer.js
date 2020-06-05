@@ -14,9 +14,9 @@ export const reducer = handleActions(
       allBeers: payload,
     }),
 
-    [actions.setBeer]: (state, { payload }) => ({
+    [actions.setCurrentBeer]: (state, { payload }) => ({
       ...state,
-      current: payload,
+      currentBeer: payload,
     }),
 
     [actions.setError]: (state, { payload }) => ({

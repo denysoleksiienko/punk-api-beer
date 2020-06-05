@@ -2,7 +2,7 @@ import { createAction } from 'redux-actions';
 import { HTTPservices } from '../../HTTPservices/HTTPservices';
 
 export const setBeers = createAction('SET_BEERS');
-export const setBeer = createAction('SET_BEER');
+export const setCurrentBeer = createAction('SET_BEER');
 export const setError = createAction('SET_ERROR');
 
 export const initialBeerPage = (page, per_page) => async (dispatch) => {
@@ -17,7 +17,7 @@ export const initialBeerPage = (page, per_page) => async (dispatch) => {
 export const initialBeerByID = (id) => async (dispatch) => {
   try {
     const beer = await HTTPservices.getBeerByID(id);
-    dispatch(setBeer(beer));
+    dispatch(setCurrentBeer(beer));
   } catch (error) {
     dispatch(setError(error));
   }

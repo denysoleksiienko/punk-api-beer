@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+
 import { BeerCard } from '../../components/BeerCard';
 
 import './Beers.scss';
