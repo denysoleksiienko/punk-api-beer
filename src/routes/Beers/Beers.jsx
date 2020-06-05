@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
+import { BeerCard } from '../../components/BeerCard';
 
 export const Beers = ({ beers, initialBeerPage }) => {
-  // const { id, name, description, image_url } = beers;
   useEffect(() => {
     initialBeerPage();
   }, [initialBeerPage]);
+
   return (
-    <div>
-      {beers.map((item) => (
-        <section key={item.id}>
-          <div>{item.name}</div>
-          <img src={item.image_url} alt="s" />
-        </section>
-      ))}
+    <div className="main-content">
+      {beers.length ? (
+        beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)
+      ) : (
+        <div className="another-cont"> No beers </div>
+      )}
     </div>
   );
 };
