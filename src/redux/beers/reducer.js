@@ -3,7 +3,7 @@ import * as actions from './actions';
 
 const initialState = {
   allBeers: [],
-  currentBeer: {},
+  currentBeer: [],
   error: false,
 };
 
