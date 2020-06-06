@@ -14,6 +14,8 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
+import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -59,10 +61,10 @@ export const BeerCard = ({ beer }) => {
       </CardActionArea>
       <CardActions className={classes.buttons}>
         <Button size="small" color="primary">
-          Share
+          <ShareOutlinedIcon />
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          <CommentOutlinedIcon />
         </Button>
         <Button size="small" color="primary">
           <FavoriteBorderIcon />
