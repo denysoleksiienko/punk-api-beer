@@ -4,6 +4,7 @@ import { HTTPservices } from '../../HTTPservices/HTTPservices';
 export const setBeers = createAction('SET_BEERS');
 export const setCurrentBeer = createAction('SET_BEER');
 export const setError = createAction('SET_ERROR');
+export const setPage = createAction('SET_PAGE');
 
 export const initialBeerPage = (page, per_page) => async (dispatch) => {
   try {
