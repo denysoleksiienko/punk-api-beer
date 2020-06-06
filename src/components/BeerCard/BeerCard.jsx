@@ -10,6 +10,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
+import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -21,6 +25,8 @@ const useStyles = makeStyles({
   },
   media: {
     height: 200,
+    marginTop: 10,
+    backgroundSize: 'contain',
   },
   buttons: {
     position: 'absolute',
@@ -47,7 +53,7 @@ export const BeerCard = ({ beer }) => {
             {beer.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {beer.description}
+            {beer.brewers_tips}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -57,6 +63,15 @@ export const BeerCard = ({ beer }) => {
         </Button>
         <Button size="small" color="primary">
           Learn More
+        </Button>
+        <Button size="small" color="primary">
+          <FavoriteBorderIcon />
+        </Button>
+        <Button size="small" color="primary">
+          <ThumbUpAltOutlinedIcon />
+        </Button>
+        <Button size="small" color="primary">
+          <ThumbDownOutlinedIcon />
         </Button>
       </CardActions>
     </Card>

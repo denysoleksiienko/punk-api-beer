@@ -13,20 +13,24 @@ export const BeerPage = ({ currentBeer, initialBeerByID }) => {
     initialBeerByID(id);
   }, [initialBeerByID, id]);
 
+  const handleGoBack = () => {
+    history.goBack();
+  };
+
   return (
     <>
       {currentBeer.map((item) => (
         <section key={item.id} className="beer-container">
-          <button onClick={() => history.goBack()} className="btn-back">
+          <button onClick={handleGoBack} className="btn-back">
             <ArrowBackOutlinedIcon color="secondary" fontSize="large" />
           </button>
 
-          <div className="beer-page">
+          <div className="beer-info">
             <div className="beer-text">
-              <h2 className="beer-page-title">{item.name}</h2>
+              <h2 className="beer-title">{item.name}</h2>
               <p>{item.description}</p>
             </div>
-            <img alt="img" className="beer-page-img" src={item.image_url}></img>
+            <img className="beer-img" src={item.image_url} alt={item.name} />
           </div>
         </section>
       ))}
