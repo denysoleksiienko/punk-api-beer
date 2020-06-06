@@ -11,7 +11,7 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import { fade, makeStyles } from '@material-ui/core/styles';
 
-import { LOGIN } from '../../constants/pathnames';
+import { LOGIN, BEERS } from '../../constants/pathnames';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    cursor: 'pointer',
   },
   search: {
     position: 'relative',
@@ -64,12 +65,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Header = () => {
+export const Header = ({ isLoggedIn, logout }) => {
   const classes = useStyles();
 
   const history = useHistory();
+
   const handleLogin = () => {
+    logout();
     history.push(LOGIN);
+  };
+
+  const handleGoToMain = () => {
+    history.push(BEERS);
   };
 
   return (
@@ -79,7 +86,7 @@ export const Header = () => {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} onClick={handleGoToMain}>
             Beers
           </Typography>
           <div className={classes.search}>
@@ -96,7 +103,7 @@ export const Header = () => {
             />
           </div>
           <Button color="inherit" onClick={handleLogin}>
-            Login
+            {isLoggedIn ? 'LogOut' : 'Login'}
           </Button>
         </Toolbar>
       </AppBar>
