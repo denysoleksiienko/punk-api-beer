@@ -5,7 +5,7 @@ import { Pagination } from '../../components/_shared/Pagination';
 
 import './Beers.scss';
 
-export const Beers = ({ beers, initialBeerPage }) => {
+export const Beers = ({ beers, initialBeerPage, searchByName, update }) => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {

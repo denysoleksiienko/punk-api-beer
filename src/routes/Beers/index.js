@@ -5,6 +5,7 @@ import { initialBeerPage } from '../../redux/beers/actions';
 
 const mapStateToProps = (state) => ({
   beers: state.products.allBeers,
+  searchByName: state.products.searchByName,
 });
 
 const mapDispatchToProps = {

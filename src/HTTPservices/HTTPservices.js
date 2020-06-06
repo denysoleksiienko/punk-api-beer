@@ -17,4 +17,8 @@ export const HTTPservices = {
     const response = await instance.get(`/beers/${id}`);
     return response.data;
   },
+  getBeerByName: async (name = '') => {
+    const response = await instance.get(`/beers?beer_name=${name}`);
+    return response.data;
+  },
 };
