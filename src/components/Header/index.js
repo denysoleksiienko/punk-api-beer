@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Header as HeaderComponent } from './Header';
 
-import { initialBeerSearchByName } from '../../redux/beers/actions';
+import { initialBeerSearchByName, search } from '../../redux/beers/actions';
 import { logout } from '../../redux/login/actions';
 
 const mapStateToProps = (state) => ({
@@ -10,6 +10,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   logout,
-  initialBeerSearchByName,
+  search,
 };
 export const Header = connect(mapStateToProps, mapDispatchToProps)(HeaderComponent);

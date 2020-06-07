@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Header = ({ isLoggedIn, logout, searchByName, initialBeerSearchByName }) => {
+export const Header = ({ isLoggedIn, logout, searchByName, search }) => {
   const classes = useStyles();
 
   const history = useHistory();
@@ -80,7 +80,7 @@ export const Header = ({ isLoggedIn, logout, searchByName, initialBeerSearchByNa
   };
 
   const handleSearch = (event) => {
-    initialBeerSearchByName(event.target.value);
+    search(event.target.value);
   };
 
   return (
