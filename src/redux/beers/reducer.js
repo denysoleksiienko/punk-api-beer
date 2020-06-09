@@ -25,6 +25,11 @@ export const reducer = handleActions(
       searchByName: payload,
     }),
 
+    [actions.setUpdateBeerPage]: (state, { payload }) => ({
+      ...state,
+      allBeers: payload,
+    }),
+
     [actions.setError]: (state, { payload }) => ({
       ...state,
       error: payload,

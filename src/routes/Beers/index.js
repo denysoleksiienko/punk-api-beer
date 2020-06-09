@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Beers as BeersComponent } from './Beers';
 
-import { initialBeerPage } from '../../redux/beers/actions';
+import { initialBeerPage, updateBeerPage } from '../../redux/beers/actions';
 
 const mapStateToProps = (state) => ({
   beers: state.products.allBeers,
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   initialBeerPage,
+  updateBeerPage,
 };
 
 export const Beers = connect(mapStateToProps, mapDispatchToProps)(BeersComponent);
