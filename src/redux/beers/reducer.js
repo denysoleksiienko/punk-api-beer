@@ -5,6 +5,7 @@ const initialState = {
   allBeers: [],
   currentBeer: [],
   error: false,
+  searchByName: '',
 };
 
 export const reducer = handleActions(
@@ -17,6 +18,11 @@ export const reducer = handleActions(
     [actions.setCurrentBeer]: (state, { payload }) => ({
       ...state,
       currentBeer: payload,
+    }),
+
+    [actions.setSearch]: (state, { payload }) => ({
+      ...state,
+      searchByName: payload,
     }),
 
     [actions.setError]: (state, { payload }) => ({

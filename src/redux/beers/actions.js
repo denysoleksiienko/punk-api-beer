@@ -3,12 +3,14 @@ import { HTTPservices } from '../../HTTPservices/HTTPservices';
 
 export const setBeers = createAction('SET_BEERS');
 export const setCurrentBeer = createAction('SET_BEER');
-export const setError = createAction('SET_ERROR');
 export const setPage = createAction('SET_PAGE');
+export const setSearch = createAction('SET_SEARCH');
 
-export const initialBeerPage = (page, per_page) => async (dispatch) => {
+export const setError = createAction('SET_ERROR');
+
+export const initialBeerPage = (name, page, per_page) => async (dispatch) => {
   try {
-    const beers = await HTTPservices.getBeers(page, per_page);
+    const beers = await HTTPservices.getBeers(name, page, per_page);
     dispatch(setBeers(beers));
   } catch (error) {
     dispatch(setError(error));
@@ -23,3 +25,25 @@ export const initialBeerByID = (id) => async (dispatch) => {
     dispatch(setError(error));
   }
 };
+
+export const search = (value) => (dispatch) => {
+  dispatch(setSearch(value));
+};
+
+// export const initialBeerSearchByName = (name) => async (dispatch) => {
+//   try {
+//     const beers = await HTTPservices.getBeerByName(name);
+//     dispatch(setSearch(beers));
+//   } catch (error) {
+//     dispatch(setError(error));
+//   }
+// };
+
+// export const update = (page, per_page) => async (dispatch) => {
+//   try {
+//     const beers = await HTTPservices.getBeers(page, per_page);
+//     dispatch(setBeers(beers));
+//   } catch (error) {
+//     dispatch(setError(error));
+//   }
+// };

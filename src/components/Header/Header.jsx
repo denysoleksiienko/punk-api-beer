@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Header = ({ isLoggedIn, logout }) => {
+export const Header = ({ isLoggedIn, logout, searchByName, search }) => {
   const classes = useStyles();
 
   const history = useHistory();
@@ -77,6 +77,10 @@ export const Header = ({ isLoggedIn, logout }) => {
 
   const handleGoToMain = () => {
     history.push(BEERS);
+  };
+
+  const handleSearch = (event) => {
+    search(event.target.value);
   };
 
   return (
@@ -94,6 +98,7 @@ export const Header = ({ isLoggedIn, logout }) => {
               <SearchIcon />
             </div>
             <InputBase
+              onChange={handleSearch}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,

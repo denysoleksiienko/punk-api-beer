@@ -20,7 +20,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 400,
+    width: 400,
     margin: '25px 25px',
     position: 'relative',
     paddingBottom: '50px',
