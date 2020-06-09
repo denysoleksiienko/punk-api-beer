@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Header as HeaderComponent } from './Header';
 
-import { initialBeerSearchByName, search } from '../../redux/beers/actions';
+import { search } from '../../redux/beers/actions';
 import { logout } from '../../redux/login/actions';
 
 const mapStateToProps = (state) => ({

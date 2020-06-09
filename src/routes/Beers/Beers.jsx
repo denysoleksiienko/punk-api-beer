@@ -5,12 +5,17 @@ import { Pagination } from '../../components/_shared/Pagination';
 
 import './Beers.scss';
 
-export const Beers = ({ beers, initialBeerPage, searchByName, update }) => {
+export const Beers = ({ beers, initialBeerPage, searchByName, updateBeerPage }) => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    initialBeerPage(searchByName, page);
-  }, [initialBeerPage, page, searchByName]);
+    setPage(1);
+    updateBeerPage(searchByName);
+  }, [updateBeerPage, searchByName]);
+
+  useEffect(() => {
+    if (page !== 1) initialBeerPage(searchByName, page);
+  }, [initialBeerPage, searchByName, page]);
 
   const handleLoadMore = () => {
     setPage(page + 1);
