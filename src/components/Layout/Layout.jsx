@@ -9,10 +9,10 @@ import { Spinner } from '../Spinner';
 export const Layout = () => {
   return (
     <div className="layout">
+      <Spinner />
       <Router>
         <Header />
         <div className="app-content">
-          <Spinner />
           <Routes />
         </div>
         <Footer />

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Spinner as LoaderComponent } from './Loader';
+import { Spinner as LoaderComponent } from './Spinner';
 
 const mapStateToProps = (state) => ({
   loader: state.loader.isLoading,
