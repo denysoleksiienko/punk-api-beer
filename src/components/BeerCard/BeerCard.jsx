@@ -1,21 +1,23 @@
 import React from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
+import { Buttons } from '../_shared/Buttons';
 // import './BeerCard.scss';
 
 import { makeStyles } from '@material-ui/core/styles';
+//butons
+// import Button from '@material-ui/core/Button';
+import CardActions from '@material-ui/core/CardActions';
+import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
+import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
+//card
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
-import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
-import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
-import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -36,11 +38,19 @@ const useStyles = makeStyles({
   },
 });
 
-export const BeerCard = ({ beer }) => {
+export const BeerCard = ({ beer, isFavorites, toggleFavorites, isLikes, toggleLike }) => {
   const classes = useStyles();
 
   const history = useHistory();
   const { url } = useRouteMatch();
+
+  const handleFavorites = () => {
+    toggleFavorites(beer.id);
+  };
+
+  const handleLikes = () => {
+    toggleLike(beer.id);
+  };
 
   const handleLearnMore = () => {
     history.push(`${url}/${beer.id}`);
@@ -60,21 +70,21 @@ export const BeerCard = ({ beer }) => {
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.buttons}>
-        <Button size="small" color="primary">
+        <Buttons size="small" color="primary" onClick={() => {}}>
           <ShareOutlinedIcon />
-        </Button>
-        <Button size="small" color="primary">
+        </Buttons>
+        <Buttons size="small" color="primary" onClick={() => {}}>
           <CommentOutlinedIcon />
-        </Button>
-        <Button size="small" color="primary">
+        </Buttons>
+        <Buttons size="small" color="primary" onClick={handleFavorites} isActive={isFavorites(beer.id)}>
           <FavoriteBorderIcon />
-        </Button>
-        <Button size="small" color="primary">
+        </Buttons>
+        <Buttons size="small" color="primary" onClick={handleLikes} isActive={isLikes(beer.id)}>
           <ThumbUpAltOutlinedIcon />
-        </Button>
-        <Button size="small" color="primary">
+        </Buttons>
+        <Buttons size="small" color="primary" onClick={() => {}}>
           <ThumbDownOutlinedIcon />
-        </Button>
+        </Buttons>
       </CardActions>
     </Card>
   );

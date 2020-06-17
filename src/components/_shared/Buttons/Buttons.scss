@@ -1,0 +1,18 @@
+.round-btn {
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  margin: 10px;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+
+  &.is-active {
+    &:active {
+      transition: none;
+      background: linear-gradient(145deg, #e7f7fe 0%, #90dbfe 100%);
+    }
+    background: linear-gradient(145deg, #e7f7fe 0%, #90dbfe 100%);
+  }
+}
