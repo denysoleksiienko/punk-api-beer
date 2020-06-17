@@ -28,6 +28,7 @@ export const BeerPage = ({ currentBeer, initialBeerByID }) => {
           <div className="beer-info">
             <div className="beer-text">
               <h2 className="beer-title">{item.name}</h2>
+              <p>First brewed: {item.first_brewed}</p>
               <p>{item.description}</p>
             </div>
             <img className="beer-img" src={item.image_url} alt={item.name} />
