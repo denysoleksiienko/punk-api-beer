@@ -38,18 +38,22 @@ const useStyles = makeStyles({
   },
 });
 
-export const BeerCard = ({ beer, isFavorites, toggleFavorites, isLikes, toggleLike }) => {
+export const BeerCard = ({ beer, isFavorites, toggleFavorites, isLikes, toggleLike, isDisLikes, toggleDisLike }) => {
   const classes = useStyles();
 
   const history = useHistory();
   const { url } = useRouteMatch();
 
   const handleFavorites = () => {
-    toggleFavorites(beer.id);
+    toggleFavorites(beer.name);
   };
 
   const handleLikes = () => {
-    toggleLike(beer.id);
+    toggleLike(beer.name);
+  };
+
+  const handleDisLikes = () => {
+    toggleDisLike(beer.name);
   };
 
   const handleLearnMore = () => {
@@ -76,13 +80,13 @@ export const BeerCard = ({ beer, isFavorites, toggleFavorites, isLikes, toggleLi
         <Buttons size="small" color="primary" onClick={() => {}}>
           <CommentOutlinedIcon />
         </Buttons>
-        <Buttons size="small" color="primary" onClick={handleFavorites} isActive={isFavorites(beer.id)}>
+        <Buttons size="small" color="primary" onClick={handleFavorites} isActive={isFavorites(beer.name)}>
           <FavoriteBorderIcon />
         </Buttons>
-        <Buttons size="small" color="primary" onClick={handleLikes} isActive={isLikes(beer.id)}>
+        <Buttons size="small" color="primary" onClick={handleLikes} isActive={isLikes(beer.name)}>
           <ThumbUpAltOutlinedIcon />
         </Buttons>
-        <Buttons size="small" color="primary" onClick={() => {}}>
+        <Buttons size="small" color="primary" onClick={handleDisLikes} isActive={isDisLikes(beer.name)}>
           <ThumbDownOutlinedIcon />
         </Buttons>
       </CardActions>
