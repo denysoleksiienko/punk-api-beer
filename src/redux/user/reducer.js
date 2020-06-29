@@ -4,6 +4,7 @@ import * as actions from './actions';
 const initialState = {
   favorites: [],
   likes: [],
+  dislikes: [],
 };
 
 export const reducer = handleActions(
@@ -21,6 +22,13 @@ export const reducer = handleActions(
         likes = [...state.likes, payload];
       }
       return { ...state, likes };
+    },
+    [actions.toggleDisLike]: (state, { payload }) => {
+      let dislikes = state.dislikes.filter((id) => id !== payload);
+      if (dislikes.length === state.dislikes.length) {
+        dislikes = [...state.dislikes, payload];
+      }
+      return { ...state, dislikes };
     },
   },
   initialState
