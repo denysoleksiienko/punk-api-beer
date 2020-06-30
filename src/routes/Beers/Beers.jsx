@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+import { Slider } from '../../components/Slider';
 import { BeerCard } from '../../components/BeerCard';
 import { Pagination } from '../../components/_shared/Pagination';
 
@@ -23,6 +24,7 @@ export const Beers = ({ beers, initialBeerPage, searchByName, updateBeerPage }) 
 
   return (
     <>
+      <Slider />
       <div className="beers-gallery">
         {beers.length ? (
           beers.map((beer) => <BeerCard beer={beer} key={beer.id} />)
